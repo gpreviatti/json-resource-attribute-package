@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Authors>Giovanni Brunno Previatti</Authors>
+		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+		<PackageTags>testing, helper, json</PackageTags>
+		<Title>JsonResource Attribute Util</Title>
+		<Description>This simple package that exposes an attribute to helps testing with json files.</Description>
+		<PackageProjectUrl>https://github.com/gpreviatti/json-resource-attribute-package</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/gpreviatti/json-resource-attribute-package</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageReleaseNotes>Improve package namespace</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\Readme.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="xunit.extensibility.core" Version="2.6.6" />
+	</ItemGroup>
+
+</Project>

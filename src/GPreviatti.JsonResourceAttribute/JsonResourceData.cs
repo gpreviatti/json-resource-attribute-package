@@ -7,7 +7,7 @@ using System.Text.Json;
 using Newtonsoft.Json.Linq;
 using Xunit.Sdk;
 
-namespace GPreviatti.JsonResourceAttribute;
+namespace GPreviatti.Util.JsonResourceAttribute;
 
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
 public sealed class JsonResourceData : DataAttribute
@@ -37,7 +37,7 @@ public sealed class JsonResourceData : DataAttribute
 
         var parameters = testMethod.GetParameters().Select(p => p.ParameterType).ToArray();
         var resourceReader = _resourceReaders.GetOrAdd(testMethod.DeclaringType.Assembly, x => new ResourceReader(x));
-        string content = resourceReader.GetString(_resourceName);
+        var content = resourceReader.GetString(_resourceName);
 
         if (UseNewtonsoft)
         {
@@ -107,7 +107,7 @@ public sealed class JsonResourceData : DataAttribute
         }
 
         var result = new object[parameters.Length];
-        int index = 0;
+        var index = 0;
         foreach (var element in jArray)
         {
             result[index] = DeserializeParameter(element, parameters[index]);
@@ -128,7 +128,7 @@ public sealed class JsonResourceData : DataAttribute
         }
 
         var result = new object[parameters.Length];
-        int index = 0;
+        var index = 0;
         foreach (var element in jsonElement.EnumerateArray())
         {
             result[index] = DeserializeParameter(element, parameters[index]);

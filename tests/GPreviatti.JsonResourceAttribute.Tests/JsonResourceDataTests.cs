@@ -1,4 +1,4 @@
-namespace GPreviatti.JsonResourceAttribute.Tests;
+namespace GPreviatti.Util.JsonResourceAttribute.Tests;
 
 public sealed class JsonResourceDataTests
 {

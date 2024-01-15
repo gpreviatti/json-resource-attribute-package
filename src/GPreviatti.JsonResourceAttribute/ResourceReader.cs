@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace GPreviatti.JsonResourceAttribute;
+namespace GPreviatti.Util.JsonResourceAttribute;
 public sealed class ResourceReader(Assembly assembly)
 {
     private readonly Assembly _thisAssembly = assembly;
