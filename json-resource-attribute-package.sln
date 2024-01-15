@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A96BBF37-1CFD-4197-8587-DB14D1FB8B49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F6798B4C-4999-432D-AFF0-E87CB2FE9EC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPreviatti.JsonResourceAttribute", "src\GPreviatti.JsonResourceAttribute\GPreviatti.JsonResourceAttribute.csproj", "{E5848D08-361F-4740-BAB1-3F11941F3EF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPreviatti.JsonResourceAttribute.Tests", "tests\GPreviatti.JsonResourceAttribute.Tests\GPreviatti.JsonResourceAttribute.Tests.csproj", "{CE651627-42BD-432F-80D0-F466423ABF68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5848D08-361F-4740-BAB1-3F11941F3EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5848D08-361F-4740-BAB1-3F11941F3EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5848D08-361F-4740-BAB1-3F11941F3EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5848D08-361F-4740-BAB1-3F11941F3EF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE651627-42BD-432F-80D0-F466423ABF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE651627-42BD-432F-80D0-F466423ABF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE651627-42BD-432F-80D0-F466423ABF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE651627-42BD-432F-80D0-F466423ABF68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5848D08-361F-4740-BAB1-3F11941F3EF0} = {A96BBF37-1CFD-4197-8587-DB14D1FB8B49}
+		{CE651627-42BD-432F-80D0-F466423ABF68} = {F6798B4C-4999-432D-AFF0-E87CB2FE9EC4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38424B3F-1AA9-4794-A54C-17C62DE34616}
+	EndGlobalSection
+EndGlobal
