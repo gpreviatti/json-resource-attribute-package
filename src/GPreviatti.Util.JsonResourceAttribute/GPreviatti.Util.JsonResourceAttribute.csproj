@@ -11,7 +11,7 @@
 		<PackageProjectUrl>https://github.com/gpreviatti/json-resource-attribute-package</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/gpreviatti/json-resource-attribute-package</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageReleaseNotes>Improve package namespace</PackageReleaseNotes>
+		<PackageReleaseNotes>Improve package namespace and folder</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>

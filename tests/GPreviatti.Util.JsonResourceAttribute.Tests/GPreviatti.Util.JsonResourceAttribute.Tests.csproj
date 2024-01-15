@@ -27,7 +27,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\src\GPreviatti.JsonResourceAttribute\GPreviatti.Util.JsonResourceAttribute.csproj" />
+	  <ProjectReference Include="..\..\src\GPreviatti.Util.JsonResourceAttribute\GPreviatti.Util.JsonResourceAttribute.csproj" />
 	</ItemGroup>
 
 
