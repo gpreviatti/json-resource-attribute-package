@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<PackageId>GPreviatti.JsonResourceAttribute</PackageId>
+		<IsPackable>true</IsPackable>
 		<Title>JsonResource Attribute Package</Title>
 		<Authors>Giovanni Brunno Previatti</Authors>
 		<Description>This simple package that exposes an attribute to helps testing with json files.</Description>
