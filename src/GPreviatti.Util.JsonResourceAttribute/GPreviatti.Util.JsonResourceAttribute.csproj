@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Authors>Giovanni Brunno Previatti</Authors>
 		<PackageReadmeFile>Readme.md</PackageReadmeFile>
-		<PackageTags>testing, helper, json</PackageTags>
+		<PackageTags>testing, test, util, helper, json</PackageTags>
 		<Title>JsonResource Attribute Util</Title>
 		<Description>This simple package that exposes an attribute to helps testing with json files.</Description>
 		<PackageProjectUrl>https://github.com/gpreviatti/json-resource-attribute-package</PackageProjectUrl>

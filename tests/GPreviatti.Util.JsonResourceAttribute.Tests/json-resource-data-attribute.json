@@ -15,5 +15,65 @@
       6,
       9
     ]
+  ],
+  "email": [
+    [
+      {
+        "Name": "John Doe",
+        "Email": "John@email.com",
+        "BirthDate": "1990-04-03"
+      },
+      true
+    ],
+    [
+      {
+        "Name": "John Doe",
+        "Email": "John.com",
+        "BirthDate": "1990-04-03"
+      },
+      false
+    ]
+  ],
+  "majorAge": [
+    [
+      [
+        {
+          "Name": "John Doe",
+          "Email": "John@email.com",
+          "BirthDate": "1990-04-03"
+        },
+        {
+          "Name": "John Doe",
+          "Email": "John@email.com",
+          "BirthDate": "1980-04-03"
+        },
+        {
+          "Name": "John Doe",
+          "Email": "John@email.com",
+          "BirthDate": "1970-04-03"
+        }
+      ],
+      true
+    ],
+    [
+      [
+        {
+          "Name": "John Doe",
+          "Email": "John@email.com",
+          "BirthDate": "1990-04-03"
+        },
+        {
+          "Name": "John Doe",
+          "Email": "John@email.com",
+          "BirthDate": "1980-04-03"
+        },
+        {
+          "Name": "John Doe",
+          "Email": "John@email.com",
+          "BirthDate": "2024-04-03"
+        }
+      ],
+      false
+    ]
   ]
 }
