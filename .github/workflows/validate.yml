@@ -7,39 +7,49 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
-env:
-  SOLUTION_PATH: "./json-resource-attribute-package.sln"
-
 jobs:
-  sonarscanner:
-    runs-on: ubuntu-latest
-    name: Test and SonarScanner 
+  build:
+    name: Build and analyze
+    runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v1
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          dotnet-version: '8.0.x'
-
-      - uses: highbyte/sonarscan-dotnet@v2.1.2
+          java-version: 17
+          distribution: 'zulu' # Alternative distribution options are available.
+      - uses: actions/checkout@v3
         with:
-          # The key of the SonarQube project
-          sonarProjectKey: gpreviatti_json-resource-attribute-package
-          # The name of the SonarQube project
-          sonarProjectName:  json-resource-attribute-package
-          # The name of the SonarQube organization in SonarCloud. For hosted SonarQube, skip this setting.
-          sonarOrganization: gpreviatti
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
-          # Optional command arguments to 'dotnet build'
-          dotnetBuildArguments: ${{ env.SOLUTION_PATH }} --configuration Release
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~\sonar\cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
 
-          # Optional command arguments to 'dotnet test'
-          dotnetTestArguments: |
-                --filter Controller ${{ env.SOLUTION_PATH }} --configuration Release --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover &&
-                dotnet test --filter Domain ${{ env.SOLUTION_PATH }} --configuration Release --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+      - name: Cache SonarCloud scanner
+        id: cache-sonar-scanner
+        uses: actions/cache@v3
+        with:
+          path: .\.sonar\scanner
+          key: ${{ runner.os }}-sonar-scanner
+          restore-keys: ${{ runner.os }}-sonar-scanner
 
-          # Optional extra command arguments the the SonarScanner 'begin' command
-          sonarBeginArguments: /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" -d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx"
-    env:
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install SonarCloud scanner
+        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+        shell: powershell
+        run: |
+          New-Item -Path .\.sonar\scanner -ItemType Directory
+          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        shell: powershell
+        run: |
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"gpreviatti_json-resource-attribute-package" /o:"gpreviatti" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=**/*.cobertura.xml
+          dotnet build --no-incremental
+          dotnet test --collect:"XPlat Code Coverage"
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
