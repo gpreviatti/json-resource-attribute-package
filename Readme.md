@@ -15,7 +15,9 @@ Install package in the project and add this block in your test csproj file in or
 
 ## How to use
 
-After install the package you have to decorate your test method with attribute and add the json file reference
+You should create a json file and add the node with a name that will be identified by the test in the example the name is `majorAge`
+
+Decorate your test method with `JsonResourceData` attribute, add the json file reference and test node name
 
 ```csharp
 [Theory(DisplayName = nameof(People_Should_Have_Major_Age))]
@@ -29,9 +31,6 @@ public void People_Should_Have_Major_Age(Person[] people, bool expected)
     Assert.True(result);
 }
 ```
-
-You should create a json file and add the node with a name that will be identified by the test in the example the name is `majorAge`
-
 
 ## Samples
 
