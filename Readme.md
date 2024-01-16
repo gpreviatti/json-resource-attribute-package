@@ -2,6 +2,13 @@
 
 [![Publish in Nuget.org](https://github.com/gpreviatti/json-resource-attribute-package/actions/workflows/publish.yml/badge.svg)](https://github.com/gpreviatti/json-resource-attribute-package/actions/workflows/publish.yml)
 
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=gpreviatti_json-resource-attribute-package&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=gpreviatti_json-resource-attribute-package)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=gpreviatti_json-resource-attribute-package&metric=bugs)](https://sonarcloud.io/summary/new_code?id=gpreviatti_json-resource-attribute-package)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=gpreviatti_json-resource-attribute-package&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=gpreviatti_json-resource-attribute-package)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=gpreviatti_json-resource-attribute-package&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=gpreviatti_json-resource-attribute-package)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=gpreviatti_json-resource-attribute-package&metric=coverage)](https://sonarcloud.io/summary/new_code?id=gpreviatti_json-resource-attribute-package)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=gpreviatti_json-resource-attribute-package&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=gpreviatti_json-resource-attribute-package)
+
 This simple package that exposes an attribute to helps testing with json files.
 
 ## How to use
