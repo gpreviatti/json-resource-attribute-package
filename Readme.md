@@ -2,9 +2,9 @@
 
 This simple package that exposes an attribute to helps testing with json files.
 
-## Configuration
+## How to use
 
-Install package in the project and add this block in your test csproj file in order to copy your json files into the debug folder
+Install package in test project and add this block in your csproj file in order to copy your json files into the debug folder
 
 ```xml
 <ItemGroup>
@@ -12,8 +12,6 @@ Install package in the project and add this block in your test csproj file in or
 	<EmbeddedResource Include="**\*.json" Exclude="bin\**;obj\**" />
 </ItemGroup>
 ```
-
-## How to use
 
 You should create a json file and add the node with a name that will be identified by the test in the example the name is `majorAge`
 
