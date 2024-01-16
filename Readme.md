@@ -1,5 +1,7 @@
 # Json Resource Attribute Package
 
+[![Publish in Nuget.org](https://github.com/gpreviatti/json-resource-attribute-package/actions/workflows/publish.yml/badge.svg)](https://github.com/gpreviatti/json-resource-attribute-package/actions/workflows/publish.yml)
+
 This simple package that exposes an attribute to helps testing with json files.
 
 ## How to use

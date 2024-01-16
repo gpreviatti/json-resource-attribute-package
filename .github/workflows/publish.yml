@@ -1,4 +1,4 @@
-name: Publish template in Nuget.org
+name: Publish in Nuget.org
 
 on:
   push:
