@@ -32,4 +32,4 @@ public void People_Should_Have_Major_Age(Person[] people, bool expected)
 
 ## Samples
 
-The samples of how to use the json resource attribute are available in test project of package
+[The samples of how to use the json resource attribute are available in test project of package](https://github.com/gpreviatti/json-resource-attribute-package/blob/main/tests/GPreviatti.Util.JsonResourceAttribute.Tests/JsonResourceDataTests.cs)
