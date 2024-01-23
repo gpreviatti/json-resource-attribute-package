@@ -60,5 +60,4 @@ jobs:
       - name: Mutation tests
         shell: powershell
         run: |
-          cd \tests\GPreviatti.Util.JsonResourceAttribute.Tests
           dotnet stryker
