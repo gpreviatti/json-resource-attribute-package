@@ -42,7 +42,7 @@ jobs:
       - name: Install dotnet tools
         shell: powershell
         run: |
-          dotnet tool install - g dotnet-sonarscanner
+          dotnet tool install -g dotnet-sonarscanner
           dotnet tool install -g dotnet-coverage
           dotnet tool install -g dotnet-stryker
 
